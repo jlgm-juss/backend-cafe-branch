@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node source/index.js"
+    "start": "babel-node source/index.js",
+    "dev": "nodemon --exec babel-node source/index.js"
+
   },
   "keywords": [],
   "author": "José Luis Gómez Marigliano",

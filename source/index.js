@@ -1,3 +1,13 @@
-import express from 'express';
+import express from "express";
 
-console.log('Hola mundo');
+//crear una instancia de express
+const app = express();
+
+//crear una variable
+app.set("port", process.env.PORT || 4000);
+//usar el puerto
+app.listen(app.get('port'),()=>{
+    console.log('Estoy en el puerto '+ app.get('port'));
+})
+
+console.log("Hola mundo");
