@@ -2,6 +2,7 @@ import express from "express";
 import morgan from "morgan";     //<--------- morgan se usa siempre con parametros
 import cors from "cors";         //<--------- cors no usa parámetros
 import path  from "path"
+import './database'
 //crear una instancia de express
 const app = express();
 
