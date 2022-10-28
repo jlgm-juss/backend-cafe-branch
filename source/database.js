@@ -1,22 +1,14 @@
 import mongoose from "mongoose";
 
-const url = "mongodb://localhost:27017/cafe-branch"; //<---- nombre de las bases de datos (cafe-branch) sin ñ sin acentos sin espacios.
+// localhost: 127.0.0.1
 
-// mongoose.connect(url); //<--- de esta manera le pido a mongoose que se conecte a la base de datos
+const url = "mongodb://127.0.0.1:27017/cafe-branch"; //<---- nombre de las bases de datos (cafe-branch) sin ñ sin acentos sin espacios.
 
-// const connection = mongoose.connection;
+mongoose.connect(url); //<--- de esta manera le pido a mongoose que se conecte a la base de datos
 
-// connection.once("open", () => {
-//   console.log("BD conectada")
-// }); //<--- con once lo que quiero decir es... una vez producida la conexion entonces...
+const connection = mongoose.connection;
 
-const connectDB = async ()=>{
-    console.log('prueba')
-    try{
-        await mongoose.connect(url);
-        console.log('BD conectada')
-    }catch(error){
-        console.log(error)
-    }
-}
-connectDB();
+connection.once("open", () => {
+  console.log("BD conectada")
+}); //<--- con once lo que quiero decir es... una vez producida la conexion entonces...
+
