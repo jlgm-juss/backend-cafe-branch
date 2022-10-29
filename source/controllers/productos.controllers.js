@@ -68,3 +68,19 @@ res.status(200).json({
   })
   }
   }
+
+  export const borrarProducto = async (req, res)=>{
+    try{
+    //buscar un producto por id y borrarlo
+    await Producto.findByIdAndRemove(req.params.id)
+    //responder al frontend si pude eliminar el producto
+    res.status(200).json({
+      mensaje: 'El producto fue correctamente eliminado'
+    })
+    }catch(error){
+    console.log(error)
+    res.status(404).json({
+      mensaje: 'Error el producto solicitado no pudo ser eliminado'
+    })
+    }
+    }
