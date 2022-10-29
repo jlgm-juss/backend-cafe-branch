@@ -1,12 +1,21 @@
 import { Router } from "express";
-import { crearProducto, listarProductos } from "../controllers/productos.controllers";
+import {
+  crearProducto,
+  listarProductos,
+  obtenerProducto,
+} from "../controllers/productos.controllers";
 
 const router = Router();
 
 router
-  .route("/productos")                                                     //<------ .route lo que hace es crear una ruta
-  .get(listarProductos)                                                                             //<--------- con un punto voy agregando las nuevas peticiones
+  .route("/productos") //<------ .route lo que hace es crear una ruta
+  .get(listarProductos) //<--------- con un punto voy agregando las nuevas peticiones
   .post(crearProducto);
+
+  router.route('/productos/:id')
+   .get(obtenerProducto)
+  // .put()
+  // .delete()
 
 export default router;
 
