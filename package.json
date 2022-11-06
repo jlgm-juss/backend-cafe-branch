@@ -6,7 +6,6 @@
   "scripts": {
     "start": "babel-node source/index.js",
     "dev": "nodemon --exec babel-node source/index.js"
-
   },
   "keywords": [],
   "author": "José Luis Gómez Marigliano",
@@ -18,6 +17,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-validator": "^6.14.2",
+    "lodash": "^4.17.21",
     "mongoose": "^6.7.0",
     "morgan": "^1.10.0"
   }
